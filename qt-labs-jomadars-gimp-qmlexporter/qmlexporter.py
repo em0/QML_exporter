@@ -63,6 +63,7 @@ def fix_name(name) :
 	fixedname = fixedname.replace(' ', '_')
 	fixedname = fixedname.replace('#', '__')
 	fixedname = fixedname.replace('!', '___')
+	fixedname = fixedname.replace('-', '_')
 	return fixedname
 
 def export_qml(image, qmlname, path, flatten):
@@ -77,7 +78,7 @@ def export_qml(image, qmlname, path, flatten):
 	    os.mkdir(imagepath)
 
 	f = open(qmlfilename, 'w')
-        f.write('import Qt 4.7\n')
+        f.write('import 2.0\n')
         f.write('Rectangle {\n')
 	copy = image.duplicate()
 	
